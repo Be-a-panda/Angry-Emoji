@@ -1,0 +1,98 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: sans-serif;
+    background-color: black;
+}
+.emoji{
+    position: relative;
+    height: 120px;
+    width: 120px;
+    background: linear-gradient(#d5234c , #ffda6a );
+    border-radius: 50%;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.6);
+}
+.face{
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    animation: angry-face 2s ease-in infinite;
+}
+.eyebrows{
+    position: absolute;
+    height: 6px;
+    width: 6px;
+    background-color: transparent;
+    top: 55px;
+    left: 57px;
+    border-radius: 50%;
+    box-shadow: -44px 5px 0 0 #000, -9px 16px 0 0 #000, 9px 16px 0 0 #000, 44px 5px 0 0 #000;
+}
+.eyebrows::after,
+.eyebrows::before
+{
+    position: absolute;
+    content: '';
+    width: 50px;
+    height: 20px;
+    border: 6px solid transparent;
+    box-sizing: border-box;
+    border-bottom-color: black;
+    border-radius: 50%;
+}
+.eyebrows::before
+{
+    margin-left: -47px;
+    transform: rotate(15deg);
+}
+.eyebrows::after
+{
+    margin-left: 3px;
+    transform: rotate(-15deg)
+}
+.eyes{
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    left: 54px;
+    top: 70px;
+    border-radius: 50%;
+    box-shadow: 25px 0 0 0 #000, -25px 0 0 0 #000;
+}
+.mouth{
+    position: absolute;
+    width: 36px;
+    height: 18px;
+    background: black;
+    left: 42px;
+    bottom: 15px;
+    border-radius: 50%;
+    animation: angry-mouth 2s ease-in infinite;
+}
+@keyframes angry-face
+{
+    35%,60%
+    {
+        transform: translateX(0) translateY(10px) scale(0.9);
+    }
+    40%,50%
+    {
+        transform: translateX(-5px) translateY(10px) scale(0.9);
+    }
+    45%,55%
+    {
+        transform: translateX(5px) translateY(10px) scale(0.9);
+    }
+}
+@keyframes angry-mouth
+{
+    25%,50%
+    {
+        height: 6px;
+        bottom: 25px;
+    }
+}
